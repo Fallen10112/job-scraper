@@ -78,7 +78,7 @@ function renderPage() {
                 <span class="salary-tag">💰 ${job.salary || 'TBC'}</span>
             </div>
             <div class="ai-summary-box">
-                <small class="ai-label">✨ AI-GENERATED SUMMARY</small>
+                <small class="ai-label">✨ SUMMARY</small>
                 <p>${job.summary}</p>
             </div>
         `;

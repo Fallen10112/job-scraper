@@ -5,11 +5,7 @@ import time
 from dotenv import load_dotenv
 
 # Configuration
-# Find the folder where THIS script is actually located
-BASE_DIR = Path(__file__).resolve().parent
-
-# Load the .env file from that specific folder
-load_dotenv(BASE_DIR / ".env")
+load_dotenv()
 
 HF_API_KEY = os.getenv("HF_API_KEY")
 HF_URL = "https://router.huggingface.co/hf-inference/models/facebook/bart-large-cnn"
@@ -64,13 +60,8 @@ def fetch_and_process_jobs(query="Junior Developer", location="United Kingdom"):
         time.sleep(1) # Be nice to Hugging Face
 
     # Save to your H: drive path
-    # This moves up one folder from 'scraper' and then into 'data'
-    output_path = BASE_DIR.parent / "data" / "jobs.json"
-
-    # Ensure the 'data' directory exists before saving
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-
-    with open(output_path, 'w', encoding='utf-8') as f:
+    output_path = "H:/xampp/htdocs/dev/job-scraper/data/jobs.json"
+    with open(output_path, 'w') as f:
         json.dump(job_list, f, indent=4)
     
     print(f"Done! {len(job_list)} real jobs ready for your website.")

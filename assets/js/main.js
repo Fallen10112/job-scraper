@@ -62,10 +62,13 @@ function renderPage() {
     }
 
     pageItems.forEach(job => {
-        const card = document.createElement('div');
-        card.className = 'job-card fade-in'; // Added a CSS class for smooth entry
+        const card = document.createElement('a'); 
+        card.href = job.url; // Set the destination link
+        card.target = "_blank"; // Open in a new tab
+        card.className = 'job-card fade-in'; 
+        card.style.textDecoration = 'none'; // Remove default link underline
+        card.style.display = 'block'; // Make sure it behaves like a container
         
-        // Logic to highlight "Remote" status visually
         const remoteClass = job.remote === "Yes" ? "badge-success" : "badge-secondary";
 
         card.innerHTML = `

@@ -57,7 +57,8 @@ def fetch_and_process_jobs(query="Junior Developer", location="United Kingdom"):
             "company": company,
             "remote": "Yes" if "remote" in description.lower() else "No",
             "salary": salary,
-            "summary": summary
+            "summary": summary,
+            "url": job.get('redirect_url')
         })
         
         time.sleep(1) # Be nice to Hugging Face

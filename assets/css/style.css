@@ -195,3 +195,20 @@ input:focus {
     display: block;
     margin-bottom: 5px;
 }
+
+#scrapeBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Space between text and spinner */
+    min-height: 45px; /* Keeps the height locked */
+    vertical-align: middle;
+}
+
+#btnLoader.spinner {
+    display: inline-block; /* Prevents it from acting like a block */
+    width: 16px;
+    height: 16px;
+    border-width: 2px;
+    margin: 0; /* Remove any default margins */
+}

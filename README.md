@@ -9,4 +9,4 @@ The purpose of this web-application is to display use of HTML, CSS, JSON files, 
 4. Run on local or remote web server and access the domain
 
 <h2>Demo</h2>
-You can find the demo at <a href="https://dev.ukfallen.co.uk/job-scraper/">here</a>
+You can find the demo at <a target="_blank" href="https://dev.ukfallen.co.uk/job-scraper/">here</a>

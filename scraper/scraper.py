@@ -2,6 +2,7 @@ import requests
 import json
 import os
 import time
+from dotenv import load_dotenv
 
 # Configuration
 load_dotenv()

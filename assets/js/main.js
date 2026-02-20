@@ -13,15 +13,25 @@ const pageIndicator = document.getElementById('page-info');
  * 1. Fetch JSON Data
  */
 async function loadJobs() {
+    const loader = document.getElementById('loading-state');
+    const jobsContainer = document.getElementById('jobs-container');
+
+    loader.style.display = 'flex';
+    jobsContainer.style.opacity = '0.3'; 
+
     try {
+        await new Promise(resolve => setTimeout(resolve, 800)); 
+
         const response = await fetch('data/jobs.json');
         allJobs = await response.json();
-        
         filteredJobs = [...allJobs]; 
+        
         renderPage();
     } catch (error) {
-        console.error("Error loading jobs:", error);
-        jobsContainer.innerHTML = `<p style="color: red;">Error loading job data. Ensure scraper has run.</p>`;
+        jobsContainer.innerHTML = `<p style="color: red;">Error loading data.</p>`;
+    } finally {
+        loader.style.display = 'none';
+        jobsContainer.style.opacity = '1';
     }
 }
 

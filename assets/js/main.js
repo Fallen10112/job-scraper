@@ -153,7 +153,7 @@ document.getElementById('scrapeBtn').addEventListener('click', async () => {
 
     try {
         // Updated to pass user inputs to PHP
-        const response = await fetch(`run_scraper.php?query=${encodeURIComponent(role)}&location=${encodeURIComponent(workType)}`);
+        const response = await fetch(`scraper/run_scraper.php?query=${encodeURIComponent(role)}&location=${encodeURIComponent(workType)}`);
         const result = await response.json();
 
         if (result.status === 'success') {

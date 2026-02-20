@@ -178,3 +178,18 @@ input:focus {
     font-size: 0.9rem;
     letter-spacing: 1px;
 }
+
+.ai-summary-box {
+    background: #f0f7ff;
+    border-left: 4px solid #007bff;
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 4px;
+}
+.ai-label {
+    color: #007bff;
+    font-weight: bold;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 5px;
+}

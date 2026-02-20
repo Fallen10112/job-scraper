@@ -1,3 +1,4 @@
+import sys
 import requests
 import json
 import os
@@ -67,4 +68,9 @@ def fetch_and_process_jobs(query="Junior Developer", location="United Kingdom"):
     print(f"Done! {len(job_list)} real jobs ready for your website.")
 
 if __name__ == "__main__":
-    fetch_and_process_jobs()
+    # UPDATE: Look for arguments passed by PHP (sys.argv)
+    # [1] is the query, [2] is the location
+    user_query = sys.argv[1] if len(sys.argv) > 1 else "Junior Developer"
+    user_location = sys.argv[2] if len(sys.argv) > 2 else "United Kingdom"
+    
+    fetch_and_process_jobs(query=user_query, location=user_location)

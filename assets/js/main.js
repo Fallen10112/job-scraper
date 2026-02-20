@@ -36,7 +36,7 @@ async function loadJobs() {
         console.error("Fetch error:", error);
         jobsContainer.innerHTML = `
             <div class="error-notice">
-                <p>⚠️ <strong>Data Connection Error:</strong> Ensure your Python scraper has run successfully.</p>
+                <p>⚠️ <strong>Please run the scraper first</strong></p>
             </div>`;
     } finally {
         if(loader) loader.style.display = 'none';
@@ -140,9 +140,8 @@ if(nextBtn) nextBtn.addEventListener('click', () => {
 });
 
 document.getElementById('scrapeBtn').addEventListener('click', async () => {
-    const btnText = document.getElementById('btnText');
-    const btnLoader = document.getElementById('btnLoader');
-    const statusText = document.getElementById('scrapeStatus');
+    const role = document.getElementById('roleInput').value;
+    const workType = document.getElementById('remoteSelect').value;
 
     // UI Feedback: Loading State
     btnText.innerText = 'Scraping...';
@@ -150,7 +149,7 @@ document.getElementById('scrapeBtn').addEventListener('click', async () => {
     statusText.innerText = "Connecting to server...";
 
     try {
-        const response = await fetch('scraper/run_scraper.php');
+        const response = await fetch(`run_scraper.php?query=${encodeURIComponent(role)}&location=${encodeURIComponent(workType)}`);
         const result = await response.json();
 
         if (result.status === 'success') {

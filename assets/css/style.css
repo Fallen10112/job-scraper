@@ -39,6 +39,7 @@ header {
     flex-wrap: wrap;
     gap: 15px;
     justify-content: center;
+    align-items: flex-end;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 

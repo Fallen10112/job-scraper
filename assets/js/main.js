@@ -145,7 +145,7 @@ document.getElementById('scrapeBtn').addEventListener('click', async () => {
     const statusText = document.getElementById('scrapeStatus');
 
     // UI Feedback: Loading State
-    btnText.innerText = 'Scraping & Summarizing...';
+    btnText.innerText = 'Scraping...';
     btnLoader.style.display = 'inline-block';
     statusText.innerText = "Connecting to server...";
 

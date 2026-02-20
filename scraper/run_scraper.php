@@ -1,3 +1,5 @@
+<!-- JOB SCRAPER DASHBOARD - CREATED BY FALLEN/BEN - V1.0 - 20/02/2026 -->
+
 <?php
 header('Content-Type: application/json');
 

@@ -1,3 +1,5 @@
+// JOB SCRAPER DASHBOARD - CREATED BY FALLEN/BEN - V1.0 - 20/02/2026
+
 // Config
 const JOBS_PER_PAGE = 10;
 let allJobs = [];

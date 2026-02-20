@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Scraper Dashboard</title>
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Job Scraper <span style="color: var(--accent-blue);">Dashboard</span></h1>
+            <p style="color: var(--text-muted);">Real-time job listings summarized by AI</p>
+            
+            <div class="filter-bar">
+                <div class="filter-group">
+                    <label for="roleInput" style="font-size: 0.8rem; margin-bottom: 5px; color: var(--text-muted);">Search Roles</label>
+                    <input type="text" id="roleInput" placeholder="e.g. Python Developer" onkeyup="applyFilters()">
+                </div>
+                
+                <div class="filter-group">
+                    <label for="remoteSelect" style="font-size: 0.8rem; margin-bottom: 5px; color: var(--text-muted);">Work Type</label>
+                    <select id="remoteSelect" onchange="applyFilters()">
+                        <option value="all">All Locations</option>
+                        <option value="Yes">Remote</option>
+                        <option value="No">On-site</option>
+                        <option value="Hybrid">Hybrid</option>
+                    </select>
+                </div>
+            </div>
+        </header>
+
+        <main id="jobs-container">
+            <p style="text-align: center; color: var(--text-muted);">Fetching latest jobs...</p>
+        </main>
+
+        <div class="pagination">
+            <button id="prevBtn" class="btn" disabled>Previous</button>
+            <span id="page-info" style="align-self: center; color: var(--text-muted); font-size: 0.9rem;"></span>
+            <button id="nextBtn" class="btn" disabled>Next</button>
+        </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

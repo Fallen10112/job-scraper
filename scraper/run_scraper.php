@@ -2,11 +2,13 @@
 header('Content-Type: application/json');
 
 // 1. FIND YOUR PYTHON PATH: Type 'where python' in CMD and paste the result here
-$pythonPath = 'C:\Users\Administrator\AppData\Local\Programs\Python\Python313\python.exe'; 
-$scriptPath = 'H:\xampp\htdocs\dev\job-scraper\scraper\scraper.py';
+$pythonPath = 'C:/Users/Administrator/AppData/Local/Programs/Python/Python313/python.exe'; 
+$scriptPath = 'H:/xampp/htdocs/dev/job-scraper/scraper/scraper.py';
 
 // 2. Change directory to the scraper folder so .env is found
-chdir('H:\xampp\htdocs\dev\job-scraper\scraper');
+chdir('H:/xampp/htdocs/dev/job-scraper/scraper');
+
+putenv('PYTHONIOENCODING=utf-8');
 
 // 3. Execute with absolute paths
 $command = "\"$pythonPath\" \"$scriptPath\" 2>&1";

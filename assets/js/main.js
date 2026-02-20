@@ -140,33 +140,34 @@ if(nextBtn) nextBtn.addEventListener('click', () => {
 });
 
 document.getElementById('scrapeBtn').addEventListener('click', async () => {
+    // These must be defined inside the function to work
     const btnText = document.getElementById('btnText');
     const btnLoader = document.getElementById('btnLoader');
     const statusText = document.getElementById('scrapeStatus');
     const role = document.getElementById('roleInput').value;
     const workType = document.getElementById('remoteSelect').value;
 
-    // UI Feedback: Loading State
     btnText.innerText = 'Scraping...';
     btnLoader.style.display = 'inline-block';
     statusText.innerText = "Connecting to server...";
 
     try {
+        // Updated to pass user inputs to PHP
         const response = await fetch(`run_scraper.php?query=${encodeURIComponent(role)}&location=${encodeURIComponent(workType)}`);
         const result = await response.json();
 
         if (result.status === 'success') {
             statusText.style.color = 'green';
             statusText.innerText = "Success! Reloading data...";
-            // Reload the job list to show new data
             loadJobs();
         } else {
-            throw new Error(result.details.join(' '));
+            // This shows the actual Python error in the UI
+            throw new Error(result.details ? result.details.join(' ') : "Unknown error");
         }
     } catch (error) {
         statusText.style.color = 'red';
         statusText.innerText = "Error: Check if Python is running correctly.";
-        console.error(error);
+        console.error("Scraper Error:", error);
     } finally {
         btnText.innerText = '🔍 Sync Live Jobs';
         btnLoader.style.display = 'none';

@@ -12,7 +12,7 @@ putenv('PYTHONIOENCODING=utf-8');
 $query = isset($_GET['query']) ? escapeshellarg($_GET['query']) : '"Junior Developer"';
 $location = isset($_GET['location']) ? escapeshellarg($_GET['location']) : '"United Kingdom"';
 
-$command = "\"$pythonPath\" \"$scriptPath\" $query $location 2>&1";
+$command = "$pythonPath $scriptPath $query $location 2>&1";
 exec($command, $output, $return_var);
 
 if ($return_var === 0) {

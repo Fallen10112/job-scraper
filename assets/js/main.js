@@ -140,6 +140,9 @@ if(nextBtn) nextBtn.addEventListener('click', () => {
 });
 
 document.getElementById('scrapeBtn').addEventListener('click', async () => {
+    const btnText = document.getElementById('btnText');
+    const btnLoader = document.getElementById('btnLoader');
+    const statusText = document.getElementById('scrapeStatus');
     const role = document.getElementById('roleInput').value;
     const workType = document.getElementById('remoteSelect').value;
 

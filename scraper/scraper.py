@@ -3,10 +3,12 @@ import requests
 import json
 import os
 import time
+from pathlib import Path
 from dotenv import load_dotenv
 
 # Configuration
-load_dotenv()
+BASE_DIR = Path(__file__).resolve().parent
+load_dotenv(BASE_DIR / ".env")
 
 HF_API_KEY = os.getenv("HF_API_KEY")
 HF_URL = "https://router.huggingface.co/hf-inference/models/facebook/bart-large-cnn"

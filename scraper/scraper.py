@@ -10,9 +10,8 @@ load_dotenv()
 HF_API_KEY = os.getenv("HF_API_KEY")
 HF_URL = "https://router.huggingface.co/hf-inference/models/facebook/bart-large-cnn"
 
-# Get a free API ID/Key from developer.adzuna.com
-ADZUNA_APP_ID = "YOUR_ADZUNA_ID"
-ADZUNA_APP_KEY = "YOUR_ADZUNA_KEY"
+ADZUNA_APP_ID = os.getenv("ADZUNA_APP_ID")
+ADZUNA_APP_KEY = os.getenv("ADZUNA_APP_KEY")
 
 def get_summary(text):
     if not text or len(text) < 100: return "Description too short for AI summary."

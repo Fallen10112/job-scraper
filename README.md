@@ -10,3 +10,6 @@ The purpose of this web-application is to display use of HTML, CSS, JSON files, 
 
 <h2>Demo</h2>
 You can find the demo at <a target="_blank" href="https://dev.ukfallen.co.uk/job-scraper/">here</a>
+
+<h2>Contributions</h2>
+<a href="https://www.adzuna.co.uk">AdZuna's API for job scraping</a>
